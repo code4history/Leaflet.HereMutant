@@ -10,7 +10,7 @@ L.HereMutant = L.Layer.extend({
 		// 🍂option debugRectangle: Boolean = false
 		// Whether to add a rectangle with the bounds of the mutant to the map.
 		// Only meant for debugging, most useful at low zoom levels.
-		debugRectangle: true,
+		debugRectangle: false,
 	},
 
 	initialize: function(options) {
