@@ -26,10 +26,7 @@ Then, you can create an instance of `L.HereMutant` on your JS code:
 ```javascript
 var roads = L.hereMutant({
 	// API Key which can be got at 'https://developer.here.com/'
-	apikey: 'xxxx',
-
-    // Optional: serviceConfig option value, which is given to H.service.Platform initialization
-	servicesConfig: {}
+	apikey: 'xxxx'
 }).addTo(map);
 ```
 

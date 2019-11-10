@@ -28,11 +28,10 @@
 <script>
     var api_key = 'xxxx';
 
-    var map = L.map('here').setView([51.505, -0.09], 13);
+    var map = L.map('here').setView([35, 135], 13);
 
     var roads = L.hereMutant({
-        apikey: api_key,
-        servicesConfig: {}
+        apikey: api_key
     }).addTo(map);
 </script>
 </html>

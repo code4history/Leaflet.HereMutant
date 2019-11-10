@@ -3,9 +3,6 @@
 
 L.HereMutant = L.Layer.extend({
 	options: {
-		// serviceConfig option value, which is given to H.service.Platform initialization
-		servicesConfig: {},
-
 		// 🍂option opacity: Number = 1.0
 		// The opacity of the HereMutant
 		opacity: 1,
@@ -69,10 +66,20 @@ L.HereMutant = L.Layer.extend({
 	_initMutant: function() {
 		if (!this._mutantContainer) return;
 
-		var platform = new H.service.Platform({
-			apikey: this.options.apikey,
-			servicesConfig: this.options.servicesConfig,
-		});
+		var platformConfig = {
+			apikey: this.options.apikey
+		};
+		if (this.options.omvBaseUrl) {
+			platformConfig.servicesConfig = {
+				omv: {
+					baseUrl: new H.service.Url(
+						this.options.omvBaseUrl[0], this.options.omvBaseUrl[1], this.options.omvBaseUrl[2],{
+							apikey: this.options.apikey
+						})
+				}
+			};
+		}
+		var platform = new H.service.Platform(platformConfig);
 		const defaultLayers = platform.createDefaultLayers();
 		var map = new H.Map(
 			this._mutantContainer,
