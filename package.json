@@ -1,0 +1,25 @@
+{
+  "name": "leaflet.heremutant",
+  "version": "0.1.0",
+  "main": "Leaflet.HereMutant.js",
+  "author": "Kohei Otsuka <kochizufan@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "prettier": "^1.13.4"
+  },
+  "scripts": {
+    "lintfix": "prettier **.js --write"
+  },
+  "prettier": {
+    "printWidth": 85,
+    "tabWidth": 4,
+    "useTabs": true,
+    "trailingComma": "es5",
+    "arrowParens": "always"
+  },
+  "keywords": [
+    "map",
+    "leaflet",
+    "here"
+  ]
+}

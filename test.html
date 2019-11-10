@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaflet HEREMutant</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <script src='Leaflet.HereMutant.js'></script>
+    <style type="text/css">
+        <!--
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .map {
+            width: 100vw;
+            height: 100vh;
+        }
+        -->
+    </style>
+</head>
+<body>
+<div id="here" class="map"></div>
+</body>
+<script>
+    var api_key = 'xxxx';
+
+    var map = L.map('here').setView([51.505, -0.09], 13);
+
+    var roads = L.hereMutant({
+        apikey: api_key,
+        servicesConfig: {}
+    }).addTo(map);
+</script>
+</html>
