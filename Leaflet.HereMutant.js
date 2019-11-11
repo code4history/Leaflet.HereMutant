@@ -125,9 +125,27 @@ L.HereMutant = L.Layer.extend({
 			.getLookAtData()
 			.bounds.getBoundingBox();
 
+		var lw = rect.getLeft();
+		var le = rect.getRight();
+
+		/*var centerLng = this._map.getCenter().lng;
+
+		// Shift the bounding box on the easting axis so it contains the map center
+		if (centerLng < lw) {
+			// Shift the whole thing to the west
+			var offset = Math.floor((centerLng - lw) / 360) * 360;
+			lw += offset;
+			le += offset;
+		} else if (centerLng > le) {
+			// Shift the whole thing to the east
+			var offset = Math.ceil((centerLng - le) / 360) * 360;
+			lw += offset;
+			le += offset;
+		}*/
+
 		return L.latLngBounds([
-			L.latLng(rect.getTop(), rect.getLeft()),
-			L.latLng(rect.getBottom(), rect.getRight()),
+			L.latLng(rect.getTop(), lw),
+			L.latLng(rect.getBottom(), le),
 		]);
 	},
 
